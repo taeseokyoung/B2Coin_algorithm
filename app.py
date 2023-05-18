@@ -9,7 +9,7 @@ import openai
 # st.write("Hello World!")
 # streamlit run app.py 터미널에서 실행하기
 
-openai.api_key = "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"
+openai.api_key = "#"
 
 # ballons 만들기
 st.balloons()
