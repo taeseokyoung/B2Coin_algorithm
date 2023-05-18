@@ -11,6 +11,7 @@ import openai
 
 openai.api_key = "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"
 
+# ballons 만들기
 st.balloons()
 
 st.title("ChatGPT Plus DALL-E!")
@@ -25,6 +26,7 @@ if submit:
 
     gpt_prompt = []
 
+    # 여기에 영어로 변역하라는 말도 적어줄 수 있음! 뭐든 추가할 수 있을듯!
     gpt_prompt.append({
         "role": "system",
         "content": "Imagine the detail appearance of the input. Response shortly. Translate to english"
