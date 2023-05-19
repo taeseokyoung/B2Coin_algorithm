@@ -2,12 +2,13 @@ n = int(input())  # 수의 개수 N 입력받기
 numbers = list(map(int, input().split()))  # N개의 수 입력받아 리스트에 저장하기
 
 # 에라토스테네스의 체 알고리즘으로 소수 찾기
-x = [True] * 1001  # 1부터 1000까지 소수 판별을 위한 리스트 생성
+x = [True] * 1001  # 1부터 1000까지 소수 판별을 위한 리스트 생성, 크기가 1001인 리스트를 만들고 리스트 내 모든 요소를 True로 초기화하는 코드
 x[0], x[1] = False, False  # 0과 1은 소수가 아니므로 False로 처리
 
 for i in range(2, 1001):
     if x[i]:  # i가 소수인 경우
         for j in range(2*i, 1001, i):  # i의 배수 모두에 대해 False로 처리
+            #첫 번째 인자는 시작값, 두 번째 인자는 끝값(포함되지 않음), 세 번째 인자는 건너뛸 간격
             x[j] = False
 
 # 주어진 수들 중에서 소수의 개수 찾기
@@ -15,6 +16,7 @@ count = 0
 for num in numbers:
     if x[num]:  # 해당 수가 소수인 경우
         count += 1
+       
 
 print(count)  # 소수의 개수 출력하기
 
